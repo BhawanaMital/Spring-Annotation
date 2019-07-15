@@ -1,30 +1,21 @@
 package com.stakeroute.domain;
 
-public class Actor {
-    private String name;
-    private String gender;
-    private int age;
+import org.springframework.beans.factory.annotation.Value;
 
-    public Actor(String name, String gender, int age) {
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
-    }
+public class Actor {
+
+    @Value("${actor.name}")
+    private String name;
+
+    @Value("${actor.gender}")
+    private String gender;
+
+    @Value("${actor.age}")
+    private int age;
 
     public Actor() {
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     @Override
     public String toString() {
