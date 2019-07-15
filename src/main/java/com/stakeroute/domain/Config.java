@@ -1,10 +1,12 @@
 package com.stakeroute.domain;
 
 
+import com.stakeroute.demo.BeanLifecycleDemoBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
+
 
 @Configuration
 @PropertySource("classpath:/values.properties")
@@ -26,6 +28,11 @@ public class Config {
         return movie;
 
 
+    }
+
+    @Bean
+    public BeanLifecycleDemoBean beanLifecycleDemoBean(){
+        return new BeanLifecycleDemoBean();
     }
 }
 

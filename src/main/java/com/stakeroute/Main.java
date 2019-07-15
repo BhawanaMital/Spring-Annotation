@@ -1,6 +1,7 @@
 package com.stakeroute;
 
 
+import com.stakeroute.demo.BeanLifecycleDemoBean;
 import com.stakeroute.domain.Config;
 import com.stakeroute.domain.Movie;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,6 +19,9 @@ public class Main {
         Movie movie2=context.getBean("movieB", Movie.class);
 
         System.out.println(movie1==movie2);
+
+        context.getBean("beanLifecycleDemoBean", BeanLifecycleDemoBean.class);
+        context.registerShutdownHook();
     }
 
 }
