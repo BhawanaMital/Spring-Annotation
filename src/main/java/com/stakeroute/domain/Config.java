@@ -2,10 +2,13 @@ package com.stakeroute.domain;
 
 
 import com.stakeroute.demo.BeanLifecycleDemoBean;
+import com.stakeroute.demo.BeanPostProcessorDemoBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
+
+
 
 
 @Configuration
@@ -33,6 +36,11 @@ public class Config {
     @Bean
     public BeanLifecycleDemoBean beanLifecycleDemoBean(){
         return new BeanLifecycleDemoBean();
+    }
+
+    @Bean
+    public BeanPostProcessorDemoBean beanPostProcessorDemoBean(){
+        return new BeanPostProcessorDemoBean();
     }
 }
 
